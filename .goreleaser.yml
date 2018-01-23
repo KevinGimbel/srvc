@@ -1,4 +1,5 @@
 builds:
+    main: ./cmd/cmd.go
   - binary: srvc
     ldflags: "-X cmd.version={{.Version}} -X cmd.buildDate={{.Date}} -X cmd.commit={{.Commit}}"
     goos:
