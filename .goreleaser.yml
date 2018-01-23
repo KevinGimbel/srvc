@@ -1,6 +1,6 @@
 builds:
-    main: ./cmd/cmd.go
   - binary: srvc
+    main: ./cmd/cmd.go
     ldflags: "-X cmd.version={{.Version}} -X cmd.buildDate={{.Date}} -X cmd.commit={{.Commit}}"
     goos:
       - windows
