@@ -1,0 +1,44 @@
+# global header config, added to each route
+headers:
+  - 
+    key: "client"
+    value: "srvc-alpha1"
+
+# route based config
+routes:
+# For the route "/demo/html-page" display the "index.html" file from the "html" fodler
+  /demo/html-page:
+    headers:
+      - key: "Content-Type"
+        value: "text/html"
+    file: "./html/index.html"
+
+  # display HTML content defined inline for /demo/html-inline
+  /demo/html-inline:
+    headers:
+      - key: "Content-Type"
+        value: "text/html"
+    content: |
+      <h1>It works!</h1>
+      <p>The content is defined inside the srvc.yaml config file
+
+  # Display XML on /demo/xml
+  /demo/xml:
+    headers:
+      - key: "Content-Type"
+        value: "application/xml"
+    content: |
+      <node id="12">
+        <meta charset="utf-8" />
+        <link to="#sub" lang="en">
+          <title>Go to sub</title>
+          <text>Click here</text>
+        </link>
+      </node>
+
+  # "json/from-file" returns the content of a JSON file
+  /json/from-file:
+    headers:
+      - key: "Content-Type"
+        value: "application/json"
+    file: "./json/from-file/dirty.json"

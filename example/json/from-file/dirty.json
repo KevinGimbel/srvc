@@ -1,0 +1,9 @@
+{
+    "name": "Dirty JSON",
+    "id": "dirty-json",
+    "type": "test_file",
+    "content": {
+        "id": 12,
+        "created_at": "22-01-2018"
+    }
+}

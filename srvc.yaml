@@ -1,0 +1,51 @@
+# global header config, added to each route
+headers:
+  - 
+    key: "client"
+    value: "srvc-alpha1"
+
+# route based config
+routes:
+# display HTML on home page and add a "hello: world" header
+  /:
+    headers:
+      - key: "hello"
+        value: "world"
+      - key: "Content-Type"
+        value: "text/html"
+    content: |
+      <h1>Routes:</h1>
+      <ul>
+        <li><a href="http://localhost:8080/">/</a></li>
+        <li><a href="http://localhost:8080/config">/config</a></li>
+        <li><a href="http://localhost:8080/a/bc">/a/bc</a></li>
+      </ul>
+
+  # display HTML content on /config 
+  /config/:
+    headers:
+      - key: "Content-Type"
+        value: "text/html"
+    content: |
+      <hello name="world">Hello, world!</hello>
+      <h1>This is a test</h1>
+
+  # Display XML on /a/bc + a proper header
+  /a/bc:
+    headers:
+      - key: "Content-Type"
+        value: "application/xml"
+    content: |
+      <node id="12">
+        <meta charset="utf-8" />
+        <link to="#sub">
+          <title>Go to sub</title>
+          <text>Click here</text>
+        </link>
+      </node>
+
+  /dirty.json:
+    headers:
+      - key: "Content-Type"
+        value: "application/json"
+    file: "./test_files/dirty.json"

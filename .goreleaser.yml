@@ -1,0 +1,20 @@
+builds:
+  - binary: srvc
+    ldflags: "-X cmd.version={{.Version}} -X cmd.buildDate={{.Date}} -X cmd.commit={{.Commit}}"
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+archive:
+  replacements:
+    amd64: 64-bit
+    darwin: macOS
+ 
+brew:
+  github:
+    owner: kevingimbel
+    name: homebrew-tap
+  homepage: https://github.com/kevingimbel/srvc
+  description: "Quick API prototyping tool"
