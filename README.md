@@ -14,7 +14,7 @@ $ brew install kevingimbel/tap/srvc
 
 ### Binary
 
-Alternatively you can grab the latest release from the [releases page](/releases) and place it somewhere in your `$PATH`.
+Alternatively you can grab the latest binary from the [releases page](https://github.com/kevingimbel/srvc/releases) and place it somewhere in your `$PATH` (e.g. `/usr/local/bin/`).
 
 ## Usage
 
@@ -104,14 +104,14 @@ routes:
             <p>This is inline content!</p>
 ```
 
-This route will respond with a HTML page containing the following code. 
+This route will respond with a HTML page containing the following code.
 
 ```html
 <h1>Hello, world!</h1>
 <p>This is inline content!</p>
 ```
 
-A route can be configured to respond with the content of a file, as shown below. 
+A route can be configured to respond with the content of a file, as shown below.
 
 ```html
 routes:
